@@ -15,7 +15,7 @@ if sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw $DB_NAME; then
     echo "database exists"
 else
     sudo -u postgres createuser --pwprompt $DB_USER
-    sudo -u postgres createdb -O $DB_USER $BD_NAME
+    sudo -u postgres createdb -O $DB_USER $DB_NAME
 fi
 
 echo "Cloning project from repo"
